@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS saved_jobs (
+ candidate_id INTEGER NOT NULL REFERENCES users(id),
+ job_id INTEGER NOT NULL REFERENCES jobs(id),
+ saved_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY(candidate_id,job_id)
+);
